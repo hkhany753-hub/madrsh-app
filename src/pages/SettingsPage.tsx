@@ -38,11 +38,11 @@ const THEME_BG_IMAGES: Partial<Record<ThemeKey, string>> = {
   dawn: '/themes/dawn-background.jpeg',
   sunset: '/themes/sunset-background.jpeg',
   mint: '/themes/mint-background.jpeg',
-  // spring: '/themes/spring-background.jpeg',
-  // 'peach-kitty': '/themes/peach-background.jpeg',
-  // batman: '/themes/batman-background.jpeg',
-  // dark: '/themes/dark-background.jpeg',
-  // cedar: '/themes/cypress-background.jpeg',
+  spring: '/themes/spring-background.jpeg',
+  'peach-kitty': '/themes/peach-background.jpeg',
+  batman: '/themes/batman-background.jpeg',
+  dark: '/themes/dark-background.jpeg',
+  cedar: '/themes/cypress-background.jpeg',
 };
 
 const THEMES: ThemeDef[] = [
