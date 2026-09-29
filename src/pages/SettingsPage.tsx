@@ -33,16 +33,16 @@ interface ThemeDef {
 // exists in public/themes/ are listed here. To add a new theme image, drop
 // the file in public/themes/ and add one line to this map.
 const THEME_BG_IMAGES: Partial<Record<ThemeKey, string>> = {
-  'neon-purple': '/themes/neon-purple-background.jpeg',
-  ocean: '/themes/ocean-background.jpeg',
-  dawn: '/themes/dawn-background.jpeg',
-  sunset: '/themes/sunset-background.jpeg',
-  mint: '/themes/mint-background.jpeg',
-  spring: '/themes/spring-background.jpeg',
-  'peach-kitty': '/themes/peach-background.jpeg',
-  batman: '/themes/batman-background.jpeg',
-  dark: '/themes/dark-background.jpeg',
-  cedar: '/themes/cypress-background.jpeg',
+  'neon-purple': `${import.meta.env.BASE_URL}themes/neon-purple-background.jpeg`,
+  ocean: `${import.meta.env.BASE_URL}themes/ocean-background.jpeg`,
+  dawn: `${import.meta.env.BASE_URL}themes/dawn-background.jpeg`,
+  sunset: `${import.meta.env.BASE_URL}themes/sunset-background.jpeg`,
+  mint: `${import.meta.env.BASE_URL}themes/mint-background.jpeg`,
+  spring: `${import.meta.env.BASE_URL}themes/spring-background.jpeg`,
+  'peach-kitty': `${import.meta.env.BASE_URL}themes/peach-background.jpeg`,
+  batman: `${import.meta.env.BASE_URL}themes/batman-background.jpeg`,
+  dark: `${import.meta.env.BASE_URL}themes/dark-background.jpeg`,
+  cedar: `${import.meta.env.BASE_URL}themes/cypress-background.jpeg`,
 };
 
 const THEMES: ThemeDef[] = [
