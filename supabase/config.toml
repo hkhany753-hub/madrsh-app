@@ -1,0 +1,3 @@
+[functions.madrsh-ai]
+verify_jwt = true
+entrypoint = "./functions/madrsh-ai/index.ts"

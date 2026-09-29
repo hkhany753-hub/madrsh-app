@@ -1,0 +1,21 @@
+{
+  "appId": "ir.madrseh.app",
+  "appName": "MADRSH",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https",
+    "url": "https://app.madrseh.ir",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#0a0a0b"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1500,
+      "backgroundColor": "#0a0a0b",
+      "showSpinner": false
+    }
+  }
+}

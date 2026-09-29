@@ -1,0 +1,28 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run build",
+    "devUrl": "https://app.madrseh.ir",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "tauri": {
+    "bundle": {
+      "active": true,
+      "targets": ["msi", "nsis"],
+      "icon": ["icons/icon.ico", "icons/128x128.png"]
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "title": "MADRSH",
+        "width": 1200,
+        "height": 800,
+        "minWidth": 400,
+        "minHeight": 600,
+        "resizable": true
+      }
+    ]
+  }
+}
