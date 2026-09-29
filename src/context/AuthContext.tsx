@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import type { Session, User } from '@supabase/supabase-js';
-import { supabase } from '@/lib/supabase';
+import { isSupabaseConfigured, supabase } from '@/lib/supabase';
 import type { Profile } from '@/lib/types';
 
 interface AuthContextValue {
@@ -32,6 +32,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   useEffect(() => {
+    if (!isSupabaseConfigured) {
+      setLoading(false);
+      return;
+    }
+
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setUser(session?.user ?? null);
@@ -64,6 +69,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const signIn = async (email: string, password: string) => {
+    if (!isSupabaseConfigured) {
+      return { error: 'اتصال پایگاه داده هنوز برای نسخه GitHub Pages تنظیم نشده است.' };
+    }
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     return { error: error?.message ?? null };
   };
@@ -74,6 +82,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     displayName: string,
     username: string,
   ) => {
+    if (!isSupabaseConfigured) {
+      return { error: 'اتصال پایگاه داده هنوز برای نسخه GitHub Pages تنظیم نشده است.' };
+    }
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
@@ -91,6 +102,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const signOut = async () => {
+    if (!isSupabaseConfigured) {
+      setSession(null);
+      setUser(null);
+      setProfile(null);
+      return;
+    }
     await supabase.auth.signOut();
     setProfile(null);
   };
